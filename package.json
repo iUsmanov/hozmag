@@ -8,5 +8,17 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.13",
+    "@svgr/webpack": "^8.1.0",
+    "@types/webpack": "^5.28.5",
+    "@types/webpack-bundle-analyzer": "^4.7.0",
+    "fork-ts-checker-webpack-plugin": "^9.0.2",
+    "html-webpack-plugin": "^5.6.0",
+    "webpack": "^5.91.0",
+    "webpack-bundle-analyzer": "^4.10.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
+  }
 }
