@@ -1,3 +1,6 @@
 npm i -D @pmmmwh/react-refresh-webpack-plugin @svgr/webpack @types/webpack @types/webpack-bundle-analyzer html-webpack-plugin fork-ts-checker-webpack-plugin webpack webpack-bundle-analyzer webpack-cli webpack-dev-server
 
 npm i @reduxjs/toolkit react react-dom react-redux react-router-dom react-virtuoso
+
+
+npm i -D @babel/core @babel/plugin-transform-runtime @babel/plugin-transform-typescript @babel/preset-env @babel/preset-react @babel/preset-typescript @types/circular-dependency-plugin @types/node @types/react @types/react-dom @typescript-eslint/eslint-plugin @typescript-eslint/parser babel-loader circular-dependency-plugin css-loader eslint eslint-config-prettier eslint-plugin-fsd-paths-guard eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-unused-imports husky lint-staged mini-css-extract-plugin prettier react-refresh sass sass-loader style-loader stylelint stylelint-config-recess-order stylelint-config-standard-scss stylelint-order stylelint-scss ts-node typescript
