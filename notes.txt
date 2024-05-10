@@ -1,1 +1,3 @@
 npm i -D @pmmmwh/react-refresh-webpack-plugin @svgr/webpack @types/webpack @types/webpack-bundle-analyzer html-webpack-plugin fork-ts-checker-webpack-plugin webpack webpack-bundle-analyzer webpack-cli webpack-dev-server
+
+npm i @reduxjs/toolkit react react-dom react-redux react-router-dom react-virtuoso
