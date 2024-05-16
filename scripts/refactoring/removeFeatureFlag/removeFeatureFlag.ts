@@ -1,4 +1,4 @@
-// npm run remove-feature isArticleRatingEnabled on
+// npm run remove-feature isProductRatingEnabled on
 // Don't forget delete "console.log('DELETE ME!')" and '<DeleteMe />'
 
 /**
@@ -6,7 +6,7 @@
  * Делается это с помощью хелпера `toggleFeatures` и компонента `ToggleFeatures`.
  * При запуске мы передаём первым аргументом - название фичи, а вторым - на какое
  * состояние мы переключаем данную фичу - `on` или `off`.
- * Вот так можно запустить этот скрипт - npm run remove-feature isArticleRatingEnabled on
+ * Вот так можно запустить этот скрипт - npm run remove-feature isProductRatingEnabled on
  *
  * Например, в одном из файлов у нас есть такой код:
  * `
@@ -46,7 +46,7 @@ const stateToggle = process.argv[3];
 
 processError(removeFeatureName, stateToggle);
 
-// project.addSourceFilesAtPaths('src/pages/ArticleDetailsPage/components/ArticleDetailsPage.tsx');
+// project.addSourceFilesAtPaths('src/pages/ProductDetailsPage/components/ProductDetailsPage.tsx');
 project.addSourceFilesAtPaths('src/**/*.{ts,tsx}');
 const sourceFiles = project.getSourceFiles();
 

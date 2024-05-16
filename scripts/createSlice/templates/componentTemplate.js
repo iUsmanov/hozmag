@@ -16,7 +16,7 @@ export const ${componentName} = memo((props: ${componentName}Props) => {
 	const { t } = useTranslation();
 
 	return (
-		<div className={classNames(cls.${sliceName}, {}, [className])}>
+		<div className={classnames(cls.${sliceName}, {}, [className])}>
 
 		</div>
 	);

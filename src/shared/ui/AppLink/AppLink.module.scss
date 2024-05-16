@@ -1,0 +1,32 @@
+.appLink {
+	cursor: pointer;
+
+	&:hover {
+		color: var(--accent-beauty);
+		opacity: 0.8;
+		fill-opacity: 0.8;
+		stroke-opacity: 0.8;
+	}
+}
+
+// Variants
+
+.primary {
+	color: var(--text-beauty);
+}
+
+.red {
+	color: var(--cancel-beauty);
+}
+
+.outline {
+	background: none;
+	border: 1px solid var(--text-beauty);
+	border-radius: 34px;
+	padding: 8px 16px;
+	color: var(--text-beauty);
+
+	&:hover {
+		border: 1px solid var(--accent-beauty);;
+	}
+}
