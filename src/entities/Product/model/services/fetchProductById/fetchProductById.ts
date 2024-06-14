@@ -7,13 +7,13 @@ export const fetchProductById = createAsyncThunk<Product, string, ThunkConfig<st
 	async (productId, thunkAPI) => {
 		const { rejectWithValue, extra } = thunkAPI;
 		try {
-			const response = await extra.api.get<Product>(`/products/${productId}`, {
-				params: {
-					_expand: 'user',
-				},
-			});
+			// const response = await extra.api.get<Product>(`/products/${productId}`, {
+			// 	params: {
+			// 		_expand: 'user',
+			// 	},
+			// });
 
-			// const response: any = { data: {} };
+			const response: any = { data: {} };
 
 			if (!response.data) {
 				throw new Error();

@@ -1,6 +1,5 @@
 import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { getUserDataByIdQuery } from '../../api/userApi';
 import { User } from '../../types/user';
 import { LOCAL_STORAGE_USER_KEY } from '@/shared/const/localStorage';
 
@@ -16,7 +15,11 @@ export const initAuthData = createAsyncThunk<User, void, ThunkConfig<string>>(
 		}
 
 		try {
-			const response = await dispatch(getUserDataByIdQuery(userId)).unwrap();
+			// const response = await dispatch(getUserDataByIdQuery(userId)).unwrap();
+			const response: User = {
+				id: 'userId45445',
+				username: 'username54654',
+			};
 
 			return response;
 		} catch (e) {

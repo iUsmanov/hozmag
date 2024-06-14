@@ -6,9 +6,7 @@ import { ProductsInfiniteListSchema } from '../types/productsInfiniteListSchema'
 import { initialState } from '../consts/productsInfiniteListConsts';
 import { getTilesQuantity } from '@/entities/Product';
 
-const productsInfiniteListAdapter = createEntityAdapter<Product>({
-	selectId: (product) => product.id,
-});
+const productsInfiniteListAdapter = createEntityAdapter<Product>({});
 
 export const getProductsInfiniteList = productsInfiniteListAdapter.getSelectors<StateSchema>(
 	(state) => state.productsInfiniteList || productsInfiniteListAdapter.getInitialState()

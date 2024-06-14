@@ -1,8 +1,7 @@
 // #store
-import { AnyAction, CombinedState, Reducer, configureStore } from '@reduxjs/toolkit';
+import { Action, Reducer, configureStore } from '@reduxjs/toolkit';
 import { ReducersObject, StateSchema, ThunkExtraArg } from './StateSchema';
 import { userReducer } from '@/entities/User';
-import { authMiddleware } from '@/features/AuthByUsername';
 import { createReducerManager } from './reducerManager';
 import { rtkApi } from '@/shared/api/rtkApi';
 import { uiReducer } from '@/shared/lib/UI';
@@ -27,7 +26,7 @@ export const createReduxStore = (initialState?: StateSchema, asyncReducers?: Red
 	const extraArg: ThunkExtraArg = {};
 
 	const store = configureStore({
-		reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>, AnyAction>,
+		reducer: reducerManager.reduce as Reducer<StateSchema, Action>,
 		preloadedState: initialState,
 		devTools: __IS_DEV__,
 		middleware: (getDefaultMiddleware) =>
@@ -35,7 +34,7 @@ export const createReduxStore = (initialState?: StateSchema, asyncReducers?: Red
 				thunk: {
 					extraArgument: extraArg,
 				},
-			}).concat(rtkApi.middleware, authMiddleware),
+			}).concat(rtkApi.middleware /* , authMiddleware */),
 	});
 	// @ts-ignore
 	store.reducerManager = reducerManager;

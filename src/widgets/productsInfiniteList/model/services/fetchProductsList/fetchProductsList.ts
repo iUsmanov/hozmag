@@ -30,14 +30,16 @@ export const fetchProductsList = createAsyncThunk<
 			search,
 			category: 'all',
 		});
-		const response = await extra.api.get<Product[]>('/products', {
-			params: {
-				_expand: 'user',
-				_limit: limit,
-				_page: page,
-				q: search,
-			},
-		});
+		// const response = await extra.api.get<Product[]>('/products', {
+		// 	params: {
+		// 		_expand: 'user',
+		// 		_limit: limit,
+		// 		_page: page,
+		// 		q: search,
+		// 	},
+		// });
+
+		const response: any = { data: {} };
 		if (!response.data) {
 			throw new Error();
 		}

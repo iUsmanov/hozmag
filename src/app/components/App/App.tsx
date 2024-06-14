@@ -19,11 +19,7 @@ const App = memo(() => {
 		return <PageLoader />;
 	}
 
-	return (
-		<div className={'app'} data-testid='App'>
-			App
-		</div>
-	);
+	return <div className={'app'}>App</div>;
 });
 
 const AppWithTheme = withTheme(App);

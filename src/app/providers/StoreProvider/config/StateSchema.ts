@@ -1,8 +1,8 @@
 // #store
 import { UserSchema } from '@/entities/User';
 import { createReduxStore } from './store';
-import { AnyAction, CombinedState, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
-import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore';
+import { Action, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
+import { EnhancedStore } from '@reduxjs/toolkit/dist/configureStore';
 import { rtkApi } from '@/shared/api/rtkApi';
 import { UISchema } from '@/shared/lib/UI';
 import { ProfileSchema } from '@/features/EditableProfileCard';
@@ -34,17 +34,17 @@ export interface StateSchema {
  * */
 export interface ReducerManager {
 	getReducerMap: () => ReducersObject;
-	reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>;
+	reduce: (state: StateSchema, action: Action) => StateSchema;
 	add: (key: StateSchemaKey, reducer: Reducer) => void;
 	remove: (key: StateSchemaKey) => void;
 }
 /**
  * ReduxStoreWithManager является типом нашего `store` и наделяет его reducerManager-ом.
  * */
-export interface ReduxStoreWithManager extends ToolkitStore<StateSchema> {
+export interface ReduxStoreWithManager extends EnhancedStore<StateSchema, Action> {
 	reducerManager: ReducerManager;
 }
-
+// type SS = EnhancedStore<StateSchema, Action>;
 /**
  * Тип ThunkExtraArg описывает extra-аргумент, который мы при конфигурации `store` прокидываем в каждый
  * `Thunk` и можем достать из `ThunkConfig` в наших `AsyncThunks`.
@@ -73,4 +73,4 @@ export type StateSchemaKey = keyof StateSchema;
 /**
  * Тип ReducersObject описывает, какому полю в корневом стейте соответствует какой редюсер.
  * */
-export type ReducersObject = ReducersMapObject<StateSchema, AnyAction>;
+export type ReducersObject = ReducersMapObject<StateSchema, Action>;

@@ -1,7 +1,7 @@
 import { Product } from '@/entities/Product';
 import { EntityState } from '@reduxjs/toolkit';
 
-export interface ProductsInfiniteListSchema extends EntityState<Product> {
+export interface ProductsInfiniteListSchema extends EntityState<Product, string> {
 	// ids: string[];
 	// entities: Record<any, any>;
 	// =======
